@@ -42,17 +42,44 @@ body {
   align-items: center;
   color: #fff;
   cursor: pointer;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  position: relative;
+}
+
+@keyframes click-effect {
+  0% {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 0;
+  }
+
+  90% {
+    background-color: transparent;
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+.click-effect::after {
+  animation: click-effect 0.5s ease;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  width: 0;
 }
 
 .button-1 {
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.04);
-}
-
-.button-2 {
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
 }
 
 .button-eq {
